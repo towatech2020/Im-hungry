@@ -1,0 +1,11 @@
+node_modules/
+**/sa-frontend/build/
+
+venv/
+
+target/
+.mvn/
+!**/maven-wrapper.jar
+
+.idea/
+*.iml

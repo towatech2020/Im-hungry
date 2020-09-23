@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: imh-web
+  labels:
+    app: imh-web
+spec:
+  selector:
+    matchLabels:
+      app: imh-web
+  replicas: 2
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: imh-web
+    spec:
+      containers:
+        - image: towatech2020/imh-web
+          imagePullPolicy: Always
+          name: imh-web
+          env:
+            - name: RECIPE_FETCH_URL
+              value: 'http://imh-recipe'
+          ports:
+            - containerPort: 8080

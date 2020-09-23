@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: imh-web-lb
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 3001
+      protocol: TCP
+      targetPort: 3001
+  selector:
+    app: imh-web

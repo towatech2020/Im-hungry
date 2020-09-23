@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: imh-ui
+  labels:
+    app: imh-ui
+spec:
+  selector:
+    matchLabels:
+      app: imh-ui
+  replicas: 2
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: imh-ui
+    spec:
+      containers:
+        - image: towatech2020/imh-ui
+          imagePullPolicy: Always
+          name: imh-ui
+          ports:
+            - containerPort: 80
