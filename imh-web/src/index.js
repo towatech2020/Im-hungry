@@ -24,7 +24,9 @@ app.post('/recipes', async (req, res) => {
 
   try {
     const recipes = await fetchRecipes(RECIPE_FETCH_URL)(ingredients);
-    res.send(pickRandomRecipe(recipes));
+    const chosenRecipe = pickRandomRecipe(recipes);
+    console.log(`sending recipe: ${JSON.stringify(chosenRecipe)}`);
+    res.send(chosenRecipe);
   } catch (error) {
     console.error(`failed to fetch recipe ${error.message}`);
     throw error;

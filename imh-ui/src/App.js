@@ -48,7 +48,7 @@ class App extends React.Component {
           <div className="main">
             <div className="header">
               <img
-                src="/kid-hungry.jpg"
+                src="/911-im-hungry.jpg"
                 className="header-image"
                 alt="kid hungry"
               />
