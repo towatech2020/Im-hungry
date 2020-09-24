@@ -21,7 +21,7 @@ spec:
         app: imh-ui
     spec:
       containers:
-        - image: towatech2020/imh-ui
+        - image: towatech2020/imh-ui:1.0.0
           imagePullPolicy: Always
           name: imh-ui
           ports:

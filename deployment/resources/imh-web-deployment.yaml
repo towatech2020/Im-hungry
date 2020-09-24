@@ -21,11 +21,11 @@ spec:
         app: imh-web
     spec:
       containers:
-        - image: towatech2020/imh-web
-          imagePullPolicy: Always
-          name: imh-web
-          env:
-            - name: RECIPE_FETCH_URL
-              value: 'http://imh-recipe'
-          ports:
-            - containerPort: 8080
+      - image: towatech2020/imh-web
+        imagePullPolicy: Always
+        name: imh-web
+        env:
+        - name: RECIPE_FETCH_URL
+          value: 'http://imh-recipe'
+        ports:
+        - containerPort: 3001

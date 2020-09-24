@@ -21,8 +21,8 @@ spec:
         app: imh-recipe
     spec:
       containers:
-        - image: towatech2020/imh-recipe
-          imagePullPolicy: Always
-          name: imh-recipe
-          ports:
-            - containerPort: 3002
+      - image: towatech2020/imh-recipe
+        imagePullPolicy: Always
+        name: imh-recipe
+        ports:
+        - containerPort: 3002
